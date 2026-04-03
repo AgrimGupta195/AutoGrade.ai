@@ -16,7 +16,7 @@ let geminiClient: GoogleGenAI | null = null;
  * @throws GeminiError if API key is not configured
  */
 export function initializeGemini(): GoogleGenAI {
-  const apiKey = 'AIzaSyCMMbWkfwEVMoQqVTUH3rk1nQy9JkeZ-bc';
+  const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
     throw new GeminiError(
